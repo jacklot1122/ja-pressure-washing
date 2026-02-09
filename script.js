@@ -43,7 +43,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== Form Submission with Better UX =====
+// ===== Form Submission with FormSubmit =====
 quoteForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -56,28 +56,34 @@ quoteForm.addEventListener('submit', function(e) {
     btnLoading.style.display = 'block';
     submitBtn.disabled = true;
     
-    // Simulate sending (replace with actual form submission)
-    setTimeout(() => {
-        // Get form data
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
-        
-        // Show success message
-        showSuccessMessage();
-        
-        // Reset form and button
-        this.reset();
+    // Get form data
+    const formData = new FormData(this);
+    
+    // Submit to FormSubmit
+    fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            showSuccessMessage();
+            this.reset();
+        } else {
+            throw new Error('Form submission failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error sending your message. Please try calling us at 0431 039 905.');
+    })
+    .finally(() => {
         btnText.style.display = 'block';
         btnLoading.style.display = 'none';
         submitBtn.disabled = false;
-        
-        // In production, you would send the data to a server:
-        // fetch('/api/contact', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(data)
-        // });
-    }, 1500);
+    });
 });
 
 // Success message popup
