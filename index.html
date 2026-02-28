@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JA Pressure Washing | #1 Professional Cleaning Services | Free Quote Today</title>
-    <meta name="description" content="Transform your property with JA Pressure Washing. Professional driveway, patio & decking cleaning. 100% satisfaction guaranteed. Get your FREE quote now!">
+    <meta name="description" content="Transform your property with JA Pressure Washing. Professional driveway, patio &amp; decking cleaning. 100% satisfaction guaranteed. Get your FREE quote now!">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="ChatGPT Image Feb 4, 2026, 03_04_09 PM.png">
 </head>
 <body>
@@ -16,7 +16,7 @@
     <div class="urgency-banner">
         <div class="urgency-content">
             <span class="urgency-icon">⚡</span>
-            <span><strong>LIMITED SLOTS:</strong> February bookings filling fast! <span class="urgency-highlight">Only 3 spots left this week</span></span>
+            <span><strong>LIMITED SLOTS:</strong> <span id="urgencyMonth">June</span> bookings filling fast! <span class="urgency-highlight">Only <span id="urgencySpots">3</span> spots left this week</span></span>
             <a href="#contact" class="urgency-cta">Book Now →</a>
         </div>
     </div>
@@ -47,14 +47,17 @@
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-badge">⭐ Rated 5/5 by 100+ Happy Customers</div>
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                ⭐ Rated 5/5 by 100+ Happy Customers
+            </div>
             <h1>Make Your Property Look <span class="highlight-text">Brand New</span> in Just One Day</h1>
-            <p class="hero-subtext">Professional pressure washing that removes years of dirt, grime & stains. <strong>100% satisfaction guaranteed or your money back.</strong></p>
+            <p class="hero-subtext">Professional pressure washing that removes years of dirt, grime &amp; stains. <strong>100% satisfaction guaranteed or your money back.</strong></p>
             
             <div class="hero-benefits">
-                <div class="hero-benefit">✓ Same Week Service</div>
-                <div class="hero-benefit">✓ Free No-Obligation Quote</div>
-                <div class="hero-benefit">✓ Fully Insured</div>
+                <div class="hero-benefit"><span class="benefit-check">✓</span> Same Week Service</div>
+                <div class="hero-benefit"><span class="benefit-check">✓</span> Free No-Obligation Quote</div>
+                <div class="hero-benefit"><span class="benefit-check">✓</span> Fully Insured</div>
             </div>
             
             <div class="hero-buttons">
@@ -70,12 +73,12 @@
             
             <div class="hero-trust">
                 <div class="trust-item">
-                    <span class="trust-number">500+</span>
+                    <span class="trust-number counter" data-target="500">0</span><span class="trust-suffix">+</span>
                     <span class="trust-label">Jobs Completed</span>
                 </div>
                 <div class="trust-divider"></div>
                 <div class="trust-item">
-                    <span class="trust-number">100%</span>
+                    <span class="trust-number counter" data-target="100">0</span><span class="trust-suffix">%</span>
                     <span class="trust-label">Satisfaction Rate</span>
                 </div>
                 <div class="trust-divider"></div>
@@ -95,26 +98,89 @@
     <section class="social-proof-bar">
         <div class="container">
             <div class="proof-items">
-                <div class="proof-item">
-                    <span class="proof-icon">🛡️</span>
-                    <span>Fully Insured</span>
+                <div class="proof-item"><span class="proof-icon">🛡️</span><span>Fully Insured</span></div>
+                <div class="proof-item"><span class="proof-icon">⚡</span><span>Same Week Service</span></div>
+                <div class="proof-item"><span class="proof-icon">💯</span><span>Satisfaction Guaranteed</span></div>
+                <div class="proof-item"><span class="proof-icon">🌿</span><span>Eco-Friendly</span></div>
+                <div class="proof-item"><span class="proof-icon">💰</span><span>No Hidden Fees</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">How It Works — <span class="highlight-text">3 Simple Steps</span></h2>
+            <p class="section-subtitle">Getting a spotless property has never been easier</p>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Request Your Free Quote</h3>
+                        <p>Fill in our quick form or call us. We'll get back to you within 1 hour with an honest, no-obligation quote.</p>
+                    </div>
                 </div>
-                <div class="proof-item">
-                    <span class="proof-icon">⚡</span>
-                    <span>Same Week Service</span>
+                <div class="process-connector"><div class="connector-line"></div></div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>We Clean Your Property</h3>
+                        <p>Our professional team arrives on time with commercial-grade equipment and transforms your surfaces.</p>
+                    </div>
                 </div>
-                <div class="proof-item">
-                    <span class="proof-icon">💯</span>
-                    <span>Satisfaction Guaranteed</span>
+                <div class="process-connector"><div class="connector-line"></div></div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Love Your New Look</h3>
+                        <p>Enjoy a property that looks brand new. We don't leave until you're 100% happy — guaranteed.</p>
+                    </div>
                 </div>
-                <div class="proof-item">
-                    <span class="proof-icon">🌿</span>
-                    <span>Eco-Friendly</span>
+            </div>
+            <div class="process-cta">
+                <a href="#contact" class="btn btn-primary btn-large">Start With Step 1 — It's FREE →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Results Section -->
+    <section id="results" class="results-section">
+        <div class="container">
+            <h2 class="section-title">See The <span class="highlight-text">Amazing Results</span></h2>
+            <p class="section-subtitle">Real transformations from real customers. This could be YOUR property!</p>
+            <div class="before-after-showcase">
+                <div class="ba-slider-container">
+                    <div class="ba-slider" id="baSlider1">
+                        <div class="ba-before">
+                            <img src="IMG_9923.jpg" alt="Before pressure washing">
+                            <span class="ba-label ba-label-before">BEFORE</span>
+                        </div>
+                        <div class="ba-after">
+                            <img src="IMG_9925.jpg" alt="After pressure washing">
+                            <span class="ba-label ba-label-after">AFTER</span>
+                        </div>
+                        <div class="ba-handle">
+                            <div class="ba-handle-line"></div>
+                            <div class="ba-handle-circle"><span>◀ ▶</span></div>
+                            <div class="ba-handle-line"></div>
+                        </div>
+                    </div>
+                    <p class="ba-caption">👆 Drag the slider to see the transformation!</p>
                 </div>
-                <div class="proof-item">
-                    <span class="proof-icon">💰</span>
-                    <span>No Hidden Fees</span>
+            </div>
+            <div class="video-showcase">
+                <h3>🎬 Watch The Transformation Happen</h3>
+                <div class="video-container">
+                    <video controls poster="IMG_9923.jpg">
+                        <source src="IMG_9936.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
+            </div>
+            <div class="results-cta">
+                <h3>Want Results Like This?</h3>
+                <p>Get a free, no-obligation quote and see how we can transform your property too.</p>
+                <a href="#contact" class="btn btn-primary btn-large">Get Your FREE Quote Now</a>
             </div>
         </div>
     </section>
@@ -122,7 +188,7 @@
     <!-- Problem/Solution Section -->
     <section class="problem-section">
         <div class="container">
-            <h2 class="section-title">Is Your Property Looking Tired & Neglected?</h2>
+            <h2 class="section-title">Is Your Property Looking <span class="highlight-text">Tired &amp; Neglected?</span></h2>
             <div class="problem-grid">
                 <div class="problem-card">
                     <div class="problem-icon">😟</div>
@@ -131,7 +197,7 @@
                 </div>
                 <div class="problem-card">
                     <div class="problem-icon">⚠️</div>
-                    <h3>Slippery & Dangerous</h3>
+                    <h3>Slippery &amp; Dangerous</h3>
                     <p>Moss and algae buildup creates slip hazards for your family</p>
                 </div>
                 <div class="problem-card">
@@ -142,57 +208,8 @@
             </div>
             <div class="solution-box">
                 <h3>✨ The Solution? Professional Pressure Washing</h3>
-                <p>In just a few hours, we'll make your property look years younger. Our professional equipment and techniques remove even the toughest stains, leaving surfaces looking brand new.</p>
-                <a href="#contact" class="btn btn-primary">Get Your Property Looking New Again →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Before/After Results Section -->
-    <section id="results" class="results-section">
-        <div class="container">
-            <h2 class="section-title">See The <span class="highlight-text">Amazing Results</span></h2>
-            <p class="section-subtitle">Real transformations from real customers. This could be YOUR property!</p>
-            
-            <!-- Before/After Slider -->
-            <div class="before-after-showcase">
-                <div class="ba-slider-container">
-                    <div class="ba-slider" id="baSlider1">
-                        <div class="ba-before">
-                            <img src="IMG_9923.jpg" alt="Before pressure washing">
-                            <span class="ba-label">BEFORE</span>
-                        </div>
-                        <div class="ba-after">
-                            <img src="IMG_9925.jpg" alt="After pressure washing">
-                            <span class="ba-label">AFTER</span>
-                        </div>
-                        <div class="ba-handle">
-                            <div class="ba-handle-line"></div>
-                            <div class="ba-handle-circle">
-                                <span>◀ ▶</span>
-                            </div>
-                            <div class="ba-handle-line"></div>
-                        </div>
-                    </div>
-                    <p class="ba-caption">👆 Drag the slider to see the transformation!</p>
-                </div>
-            </div>
-
-            <!-- Time Lapse Video -->
-            <div class="video-showcase">
-                <h3>🎬 Watch The Transformation Happen</h3>
-                <div class="video-container">
-                    <video controls poster="IMG_9923.jpg">
-                        <source src="IMG_9936.mov" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <p class="video-caption">See years of grime disappear in minutes! This is the power of professional pressure washing.</p>
-            </div>
-
-            <div class="results-cta">
-                <h3>Want Results Like This?</h3>
-                <a href="#contact" class="btn btn-primary btn-large">Get Your FREE Quote Now</a>
+                <p>In just a few hours, we'll make your property look years younger. Our professional equipment removes even the toughest stains, leaving surfaces looking brand new.</p>
+                <a href="#contact" class="btn btn-white">Get Your Property Looking New Again →</a>
             </div>
         </div>
     </section>
@@ -202,75 +219,74 @@
         <div class="container">
             <h2 class="section-title">Our Professional Services</h2>
             <p class="section-subtitle">Expert cleaning solutions for every outdoor surface</p>
-            
             <div class="services-grid">
                 <div class="service-card featured">
                     <div class="service-badge">Most Popular</div>
-                    <div class="service-icon">🏠</div>
+                    <div class="service-icon-wrap"><span class="service-icon">🏠</span></div>
                     <h3>Driveway Cleaning</h3>
                     <p>Restore your driveway to its original glory. Remove oil stains, moss, algae, and years of built-up grime.</p>
                     <ul class="service-includes">
-                        <li>✓ Pre-treatment application</li>
-                        <li>✓ High-pressure cleaning</li>
-                        <li>✓ Re-sanding if needed</li>
+                        <li><span class="check-icon">✓</span> Pre-treatment application</li>
+                        <li><span class="check-icon">✓</span> High-pressure cleaning</li>
+                        <li><span class="check-icon">✓</span> Re-sanding if needed</li>
                     </ul>
                     <a href="#contact" class="btn btn-primary btn-full">Get Quote</a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🪨</div>
+                    <div class="service-icon-wrap"><span class="service-icon">🪨</span></div>
                     <h3>Patio Cleaning</h3>
                     <p>Bring your patio back to life. Perfect for all stone, concrete, and brick surfaces.</p>
                     <ul class="service-includes">
-                        <li>✓ All surface types</li>
-                        <li>✓ Weed removal included</li>
-                        <li>✓ Protective treatment option</li>
+                        <li><span class="check-icon">✓</span> All surface types</li>
+                        <li><span class="check-icon">✓</span> Weed removal included</li>
+                        <li><span class="check-icon">✓</span> Protective treatment option</li>
                     </ul>
                     <a href="#contact" class="btn btn-outline btn-full">Get Quote</a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🏡</div>
+                    <div class="service-icon-wrap"><span class="service-icon">🏡</span></div>
                     <h3>Decking Restoration</h3>
                     <p>Revive tired, weathered decking with our specialist wood cleaning service.</p>
                     <ul class="service-includes">
-                        <li>✓ Gentle wood cleaning</li>
-                        <li>✓ Algae & mould removal</li>
-                        <li>✓ Oil treatment available</li>
+                        <li><span class="check-icon">✓</span> Gentle wood cleaning</li>
+                        <li><span class="check-icon">✓</span> Algae and mould removal</li>
+                        <li><span class="check-icon">✓</span> Oil treatment available</li>
                     </ul>
                     <a href="#contact" class="btn btn-outline btn-full">Get Quote</a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🧱</div>
-                    <h3>Wall & Render Cleaning</h3>
+                    <div class="service-icon-wrap"><span class="service-icon">🧱</span></div>
+                    <h3>Wall and Render Cleaning</h3>
                     <p>Soft washing and pressure cleaning for all external wall types.</p>
                     <ul class="service-includes">
-                        <li>✓ Safe soft washing</li>
-                        <li>✓ Algae removal</li>
-                        <li>✓ Render safe methods</li>
+                        <li><span class="check-icon">✓</span> Safe soft washing</li>
+                        <li><span class="check-icon">✓</span> Algae removal</li>
+                        <li><span class="check-icon">✓</span> Render safe methods</li>
                     </ul>
                     <a href="#contact" class="btn btn-outline btn-full">Get Quote</a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🏢</div>
+                    <div class="service-icon-wrap"><span class="service-icon">🏢</span></div>
                     <h3>Commercial Cleaning</h3>
                     <p>Keep your business looking professional and welcoming to customers.</p>
                     <ul class="service-includes">
-                        <li>✓ Flexible scheduling</li>
-                        <li>✓ Regular contracts</li>
-                        <li>✓ Minimal disruption</li>
+                        <li><span class="check-icon">✓</span> Flexible scheduling</li>
+                        <li><span class="check-icon">✓</span> Regular contracts</li>
+                        <li><span class="check-icon">✓</span> Minimal disruption</li>
                     </ul>
                     <a href="#contact" class="btn btn-outline btn-full">Get Quote</a>
                 </div>
                 <div class="service-card deal-card">
                     <div class="service-badge deal-badge">Best Value</div>
-                    <div class="service-icon">✨</div>
+                    <div class="service-icon-wrap"><span class="service-icon">✨</span></div>
                     <h3>Full Property Clean</h3>
                     <p>Complete exterior cleaning package at a discounted bundle rate!</p>
                     <ul class="service-includes">
-                        <li>✓ Driveway + Patio</li>
-                        <li>✓ Paths & Steps</li>
-                        <li>✓ Save 15% vs. separate</li>
+                        <li><span class="check-deal">✓</span> Driveway + Patio</li>
+                        <li><span class="check-deal">✓</span> Paths and Steps</li>
+                        <li><span class="check-deal">✓</span> Save 15% vs. separate</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary btn-full">Get Bundle Quote</a>
+                    <a href="#contact" class="btn btn-success btn-full">Get Bundle Quote</a>
                 </div>
             </div>
         </div>
@@ -281,7 +297,6 @@
         <div class="container">
             <h2 class="section-title">What Our Customers Say</h2>
             <p class="section-subtitle">Don't just take our word for it - hear from real customers</p>
-            
             <div class="reviews-stats">
                 <div class="review-stat">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
@@ -297,9 +312,9 @@
                     <div class="stat-label">Would Recommend</div>
                 </div>
             </div>
-
             <div class="reviews-grid">
                 <div class="review-card">
+                    <div class="review-quote">&ldquo;</div>
                     <div class="review-stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"Absolutely amazing job! My driveway looks brand new. The team was professional, on time, and the price was very fair. Can't recommend them enough!"</p>
                     <div class="review-author">
@@ -312,6 +327,7 @@
                     <div class="verified-badge">✓ Verified Customer</div>
                 </div>
                 <div class="review-card">
+                    <div class="review-quote">&ldquo;</div>
                     <div class="review-stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"Best decision I made! My patio was covered in black algae and looked terrible. Now it looks better than when it was first laid. Fantastic service!"</p>
                     <div class="review-author">
@@ -324,6 +340,7 @@
                     <div class="verified-badge">✓ Verified Customer</div>
                 </div>
                 <div class="review-card">
+                    <div class="review-quote">&ldquo;</div>
                     <div class="review-stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"Quick response, fair quote, and incredible results. They transformed my tired old decking into something I'm proud to show off. Thank you!"</p>
                     <div class="review-author">
@@ -336,7 +353,6 @@
                     <div class="verified-badge">✓ Verified Customer</div>
                 </div>
             </div>
-
             <div class="reviews-cta">
                 <p>Join our growing list of happy customers!</p>
                 <a href="#contact" class="btn btn-primary btn-large">Get Your FREE Quote</a>
@@ -347,7 +363,7 @@
     <!-- Why Choose Us -->
     <section class="why-us">
         <div class="container">
-            <h2 class="section-title">Why Choose JA Pressure Washing?</h2>
+            <h2 class="section-title white">Why Choose <span class="highlight-text">JA Pressure Washing?</span></h2>
             <div class="why-grid">
                 <div class="why-card">
                     <div class="why-icon">🏆</div>
@@ -360,7 +376,7 @@
                     <p>No hidden fees or surprise charges. You'll know exactly what you're paying before we start.</p>
                 </div>
                 <div class="why-card">
-                    <div class="why-icon">🛡️</div>
+                    <div class="why-icon">��️</div>
                     <h3>Fully Insured</h3>
                     <p>Complete peace of mind knowing you're protected with our comprehensive insurance cover.</p>
                 </div>
@@ -388,7 +404,6 @@
         <div class="container">
             <h2 class="section-title">Frequently Asked Questions</h2>
             <p class="section-subtitle">Got questions? We've got answers!</p>
-            
             <div class="faq-grid">
                 <div class="faq-item">
                     <button class="faq-question">
@@ -396,7 +411,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Every job is different, so we provide free, no-obligation quotes. Prices depend on the size of the area and condition. Most driveway cleans start from around £100-£150. Contact us for an accurate quote!</p>
+                        <p>Every job is different, so we provide free, no-obligation quotes. Prices depend on the size of the area and condition. Most driveway cleans start from around $150-$250 AUD. Contact us for an accurate quote!</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -414,7 +429,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Not when done professionally! We adjust our pressure and technique for each surface type. Delicate surfaces get gentle soft washing, while tough areas get the full power treatment. Your property is in safe hands.</p>
+                        <p>Not when done professionally! We adjust our pressure and technique for each surface type. Delicate surfaces get gentle soft washing, while tough areas get the full power treatment.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -423,7 +438,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Not necessarily! As long as we have access to the area and a water supply, we can work while you're out. We'll send photos when we're done so you can see the results!</p>
+                        <p>Not necessarily! As long as we have access to the area and a water supply, we can work while you're out. We'll send photos when we're done!</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -432,7 +447,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>We typically book jobs within 3-7 days, sometimes sooner! We're flexible and will do our best to work around your schedule. Contact us now to check availability.</p>
+                        <p>We typically book jobs within 3-7 days, sometimes sooner! Contact us now to check availability.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -441,7 +456,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>We cover a wide local area and surrounding regions. Get in touch with your postcode and we'll confirm if we can help!</p>
+                        <p>We cover a wide local area and surrounding regions. Get in touch with your postcode and we'll confirm!</p>
                     </div>
                 </div>
             </div>
@@ -452,23 +467,21 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-header">
-                <h2 class="section-title">Get Your FREE Quote in 60 Seconds</h2>
+                <h2 class="section-title">Get Your FREE Quote in <span class="highlight-text">60 Seconds</span></h2>
                 <p class="section-subtitle">No obligation. No pushy sales. Just an honest quote.</p>
                 <div class="contact-urgency">
                     <span class="urgency-pulse"></span>
                     <span>⚡ 3 Quote Requests Today - We respond within 1 hour!</span>
                 </div>
             </div>
-            
             <div class="contact-wrapper">
-                <div class="contact-info">
+                <div class="contact-info-side">
                     <div class="info-header">
                         <h3>Ready to Transform Your Property?</h3>
                         <p>Get in touch today and we'll have your quote to you within the hour.</p>
                     </div>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">📞</div>
+                        <div class="contact-icon-wrap">📞</div>
                         <div>
                             <h4>Call or Text</h4>
                             <a href="tel:+61431039905" class="contact-link">0431 039 905</a>
@@ -476,7 +489,7 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">📧</div>
+                        <div class="contact-icon-wrap">📧</div>
                         <div>
                             <h4>Email</h4>
                             <a href="mailto:japressureau@gmail.com" class="contact-link">japressureau@gmail.com</a>
@@ -484,20 +497,18 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">📍</div>
+                        <div class="contact-icon-wrap">📍</div>
                         <div>
                             <h4>Service Area</h4>
-                            <p class="contact-link">Your Local Area & Surrounding Regions</p>
+                            <p class="contact-link">Your Local Area and Surrounding Regions</p>
                         </div>
                     </div>
-
                     <div class="trust-badges">
                         <div class="badge">🛡️ Fully Insured</div>
                         <div class="badge">✅ No Obligation</div>
                         <div class="badge">⭐ 5-Star Rated</div>
                     </div>
                 </div>
-                
                 <form class="contact-form" id="quoteForm" action="https://formsubmit.co/japressureau@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="New Quote Request from JA Pressure Washing Website">
                     <input type="hidden" name="_captcha" value="false">
@@ -505,31 +516,37 @@
                     <input type="hidden" name="_next" value="https://www.japressureau.com.au/thank-you">
                     <input type="text" name="_honey" style="display:none">
                     <div class="form-header">
+                        <div class="form-badge">⚡ FREE and No Obligation</div>
                         <h3>Request Your FREE Quote</h3>
                         <p>Fill in the form below and we'll get back to you ASAP</p>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name *" required>
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. John Smith" required>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Phone Number *" required>
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="e.g. 0431 039 905" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Email Address *" required>
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="e.g. john@email.com" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="text" name="postcode" placeholder="Postcode *" required>
+                            <label for="postcode">Postcode *</label>
+                            <input type="text" id="postcode" name="postcode" placeholder="e.g. 2000" required>
                         </div>
                         <div class="form-group">
-                            <select name="service" required>
-                                <option value="">Select Service *</option>
+                            <label for="service">Service Required *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service...</option>
                                 <option value="driveway">Driveway Cleaning</option>
                                 <option value="patio">Patio Cleaning</option>
                                 <option value="decking">Decking Restoration</option>
-                                <option value="walls">Wall & Render Cleaning</option>
+                                <option value="walls">Wall and Render Cleaning</option>
                                 <option value="commercial">Commercial Cleaning</option>
                                 <option value="full">Full Property Clean (Best Value!)</option>
                                 <option value="other">Other</option>
@@ -537,13 +554,14 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Tell us about your project (size, condition, any special requirements)..." rows="3"></textarea>
+                        <label for="message">Tell us about your project <span class="label-optional">(optional)</span></label>
+                        <textarea id="message" name="message" placeholder="e.g. Driveway is about 40sqm, heavy moss..." rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full btn-large submit-btn">
-                        <span class="btn-text">Get My FREE Quote Now</span>
-                        <span class="btn-loading" style="display:none;">Sending...</span>
+                    <button type="submit" class="btn btn-success btn-full btn-large submit-btn">
+                        <span class="btn-text">Get My FREE Quote Now →</span>
+                        <span class="btn-loading" style="display:none;"><span class="spinner"></span> Sending...</span>
                     </button>
-                    <p class="form-note">🔒 Your information is 100% secure and will never be shared</p>
+                    <p class="form-trust">🔒 Your information is 100% secure and will never be shared</p>
                 </form>
             </div>
         </div>
@@ -568,10 +586,6 @@
                 <div class="footer-brand">
                     <img src="ChatGPT Image Feb 4, 2026, 03_04_09 PM.png" alt="JA Pressure Washing Logo">
                     <p>Professional pressure washing services for residential and commercial properties. Transforming properties across the local area.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="Instagram">📷</a>
-                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
@@ -602,7 +616,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 JA Pressure Washing. All rights reserved.</p>
+                <p>&copy; 2025 JA Pressure Washing. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -610,12 +624,12 @@
     <!-- Floating CTA Button (Mobile) -->
     <div class="floating-cta">
         <a href="tel:+61431039905" class="floating-btn call-btn">
-            <span class="btn-icon">📞</span>
-            <span class="btn-label">Call Now</span>
+            <span>📞</span>
+            <span>Call Now</span>
         </a>
         <a href="#contact" class="floating-btn quote-btn">
-            <span class="btn-icon">💬</span>
-            <span class="btn-label">Free Quote</span>
+            <span>💬</span>
+            <span>Free Quote</span>
         </a>
     </div>
 
@@ -628,7 +642,7 @@
             <h3>Wait! Don't Leave Without Your FREE Quote!</h3>
             <p>Get an instant quote and see how affordable professional pressure washing can be.</p>
             <a href="#contact" class="btn btn-primary btn-large" onclick="closePopup()">Get My FREE Quote Now</a>
-            <p class="popup-note">No obligation • Response within 1 hour</p>
+            <p class="popup-note">No obligation - Response within 1 hour</p>
         </div>
     </div>
 
