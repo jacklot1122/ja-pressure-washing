@@ -351,6 +351,7 @@ img {
     background: var(--gradient-dark);
     overflow: hidden;
     padding-top: 100px;
+    padding-bottom: 80px;
 }
 
 .hero::before {
@@ -471,6 +472,7 @@ img {
     gap: 40px;
     animation: fadeInUp 0.8s ease 0.7s both;
     flex-wrap: wrap;
+    margin-bottom: 60px;
 }
 
 .trust-item {

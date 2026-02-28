@@ -170,16 +170,17 @@ function animateCounters() {
     });
 }
 
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !countersStarted) {
-            countersStarted = true;
-            animateCounters();
-        }
-    });
-}, { threshold: 0.5 });
+// Fire counters immediately since hero is visible on load,
+// but also set up observer as fallback
+function startCounters() {
+    if (!countersStarted) {
+        countersStarted = true;
+        animateCounters();
+    }
+}
 
-counters.forEach(counter => counterObserver.observe(counter));
+// Start after a short delay so the page has rendered
+setTimeout(startCounters, 800);
 
 // ===== Dynamic Urgency Month =====
 const urgencyMonth = document.getElementById('urgencyMonth');
