@@ -44,18 +44,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===== Form Submission with FormSubmit =====
-quoteForm.addEventListener('submit', function(e) {
-    const submitBtn = this.querySelector('.submit-btn');
-    const btnText = submitBtn.querySelector('.btn-text');
-    const btnLoading = submitBtn.querySelector('.btn-loading');
-    
-    // Show loading state
-    btnText.style.display = 'none';
-    btnLoading.style.display = 'block';
-    submitBtn.disabled = true;
-    
-    // Allow form to submit normally (will redirect to thank-you page)
-});
+if (quoteForm) {
+    quoteForm.addEventListener('submit', function(e) {
+        const submitBtn = this.querySelector('.submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        
+        // Show loading state
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'block';
+        submitBtn.disabled = true;
+        
+        // Allow form to submit normally to FormSubmit (will redirect to thank-you page)
+    });
+}
 
 // Success message popup
 function showSuccessMessage() {

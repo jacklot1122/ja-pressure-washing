@@ -156,7 +156,24 @@
             </div>
             
             <a href="index.html" class="btn-home">← Back to Home</a>
+            <p style="margin-top: 20px; color: #999; font-size: 0.9rem;">You will be redirected to the home page in <span id="countdown">8</span> seconds...</p>
         </div>
     </div>
+
+    <script>
+        // Auto-redirect back to home page after 8 seconds
+        // This page stays separate for Google Ads conversion tracking
+        let seconds = 8;
+        const countdownEl = document.getElementById('countdown');
+        
+        const timer = setInterval(function() {
+            seconds--;
+            countdownEl.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(timer);
+                window.location.href = 'https://www.japressureau.com.au/#home';
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
