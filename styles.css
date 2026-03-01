@@ -1096,10 +1096,11 @@ img {
     display: flex;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     gap: 24px;
+    will-change: transform;
 }
 
 .carousel-track .review-card {
-    min-width: calc(33.333% - 16px);
+    min-width: calc((100% - 48px) / 3);
     flex-shrink: 0;
     background: var(--light);
     padding: 36px;
@@ -1107,6 +1108,8 @@ img {
     border: 1px solid var(--border);
     position: relative;
     transition: var(--transition);
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 .carousel-track .review-card:hover {
@@ -2255,7 +2258,7 @@ img {
     }
 
     .carousel-track .review-card {
-        min-width: calc(50% - 12px);
+        min-width: calc((100% - 24px) / 2);
     }
 
     .gallery-grid {
@@ -2368,7 +2371,7 @@ img {
     }
 
     .carousel-track .review-card {
-        min-width: calc(100% - 0px);
+        min-width: 100%;
     }
 
     .gallery-grid {

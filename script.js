@@ -133,7 +133,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.service-card, .review-card, .why-card, .contact-item, .problem-card, .faq-item, .process-step').forEach(el => {
+document.querySelectorAll('.service-card, .why-card, .contact-item, .problem-card, .faq-item, .process-step').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
