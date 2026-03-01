@@ -239,5 +239,178 @@ if (video) {
     video.addEventListener('ended', () => { console.log('Video finished'); });
 }
 
+// ===== Testimonial Carousel =====
+(function initCarousel() {
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    const dotsContainer = document.getElementById('carouselDots');
+    if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+
+    const cards = track.querySelectorAll('.review-card');
+    let currentIndex = 0;
+    let cardsPerView = 3;
+    let autoPlayTimer;
+
+    function getCardsPerView() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 992) return 2;
+        return 3;
+    }
+
+    function getTotalPages() {
+        return Math.ceil(cards.length / cardsPerView);
+    }
+
+    function buildDots() {
+        dotsContainer.innerHTML = '';
+        const total = getTotalPages();
+        for (let i = 0; i < total; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goToPage(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateDots() {
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+        const page = Math.floor(currentIndex / cardsPerView);
+        dots.forEach((d, i) => d.classList.toggle('active', i === page));
+    }
+
+    function goToPage(page) {
+        currentIndex = page * cardsPerView;
+        if (currentIndex >= cards.length) currentIndex = 0;
+        updatePosition();
+        updateDots();
+    }
+
+    function updatePosition() {
+        if (cards.length === 0) return;
+        const cardWidth = cards[0].offsetWidth + 24;
+        track.style.transform = 'translateX(-' + (currentIndex * cardWidth) + 'px)';
+    }
+
+    function next() {
+        currentIndex += cardsPerView;
+        if (currentIndex >= cards.length) currentIndex = 0;
+        updatePosition();
+        updateDots();
+    }
+
+    function prev() {
+        currentIndex -= cardsPerView;
+        if (currentIndex < 0) currentIndex = Math.max(0, cards.length - cardsPerView);
+        updatePosition();
+        updateDots();
+    }
+
+    function startAutoPlay() {
+        autoPlayTimer = setInterval(next, 5000);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayTimer);
+    }
+
+    prevBtn.addEventListener('click', () => { stopAutoPlay(); prev(); startAutoPlay(); });
+    nextBtn.addEventListener('click', () => { stopAutoPlay(); next(); startAutoPlay(); });
+
+    track.addEventListener('mouseenter', stopAutoPlay);
+    track.addEventListener('mouseleave', startAutoPlay);
+
+    // Touch support for carousel
+    let touchStartX = 0;
+    let touchEndX = 0;
+    track.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; stopAutoPlay(); }, {passive: true});
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) next();
+        else if (touchEndX - touchStartX > 50) prev();
+        startAutoPlay();
+    }, {passive: true});
+
+    function handleResize() {
+        const newPerView = getCardsPerView();
+        if (newPerView !== cardsPerView) {
+            cardsPerView = newPerView;
+            currentIndex = 0;
+            buildDots();
+            updatePosition();
+        }
+    }
+
+    window.addEventListener('resize', handleResize);
+    cardsPerView = getCardsPerView();
+    buildDots();
+    updatePosition();
+    startAutoPlay();
+})();
+
+// ===== Gallery Lightbox =====
+(function initLightbox() {
+    const lightbox = document.getElementById('galleryLightbox');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+    const lightboxOverlay = lightbox ? lightbox.querySelector('.lightbox-overlay') : null;
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    if (!lightbox || !lightboxImg || galleryItems.length === 0) return;
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            const caption = item.getAttribute('data-caption') || '';
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = caption;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+})();
+
+// ===== Sticky CTA Bar =====
+(function initStickyCta() {
+    const stickyCta = document.getElementById('stickyCta');
+    const contactSection = document.getElementById('contact');
+    if (!stickyCta) return;
+
+    let stickyVisible = false;
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const contactTop = contactSection ? contactSection.offsetTop : Infinity;
+        const shouldShow = scrollY > 600 && scrollY < contactTop - 200;
+
+        if (shouldShow && !stickyVisible) {
+            stickyCta.classList.add('visible');
+            stickyVisible = true;
+        } else if (!shouldShow && stickyVisible) {
+            stickyCta.classList.remove('visible');
+            stickyVisible = false;
+        }
+    });
+})();
+
+// ===== Dynamic Form Quote Count =====
+(function updateQuoteCount() {
+    const el = document.getElementById('quoteCountToday');
+    if (!el) return;
+    const hour = new Date().getHours();
+    const count = Math.max(3, Math.min(12, Math.floor(hour * 0.5) + 3));
+    el.textContent = count;
+})();
+
 console.log('%cJA Pressure Washing', 'color: #0066cc; font-size: 24px; font-weight: bold;');
 console.log('%cProfessional Pressure Washing Services', 'color: #666; font-size: 14px;');
