@@ -1940,13 +1940,7 @@ img {
     color: var(--dark);
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-}
-
-.gallery-item {
+.gallery-grid {\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: 16px;\n    max-width: 800px;\n    margin: 0 auto;\n}\n\n.gallery-item {
     position: relative;
     border-radius: var(--radius-sm);
     overflow: hidden;
@@ -2436,4 +2430,154 @@ img {
     .process-step {
         padding: 28px 20px;
     }
+}
+
+/* ===== Trusted Providers Section ===== */
+.trusted-providers {
+    padding: 40px 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.trusted-providers h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 28px;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.provider-badges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.provider-badge {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 18px 20px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition);
+}
+
+.provider-badge:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.provider-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.provider-badge strong {
+    display: block;
+    color: var(--white);
+    font-size: 0.92rem;
+    margin-bottom: 3px;
+}
+
+.provider-badge span {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+/* ===== Service Areas Section ===== */
+.service-areas {
+    padding: 40px 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-areas h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 28px;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+}
+
+.area-group h4 {
+    color: var(--secondary);
+    font-size: 0.92rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid rgba(0, 168, 232, 0.3);
+}
+
+.area-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.area-group ul li {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.82rem;
+    padding: 3px 0;
+    transition: color 0.2s;
+}
+
+.area-group ul li:hover {
+    color: var(--white);
+}
+
+.areas-note {
+    text-align: center;
+    margin-top: 24px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.88rem;
+}
+
+.areas-note a {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.areas-note a:hover {
+    color: var(--white);
+}
+
+/* ===== Responsive: Trusted Providers & Service Areas ===== */
+@media (max-width: 992px) {
+    .provider-badges {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .areas-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .provider-badges {
+        grid-template-columns: 1fr;
+    }
+    .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Gallery Grid Fix (2 items) ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }

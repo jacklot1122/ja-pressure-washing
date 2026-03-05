@@ -182,22 +182,8 @@ function startCounters() {
 // Start after a short delay so the page has rendered
 setTimeout(startCounters, 800);
 
-// ===== Dynamic Urgency Month =====
-const urgencyMonth = document.getElementById('urgencyMonth');
-if (urgencyMonth) {
-    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-    urgencyMonth.textContent = months[new Date().getMonth()];
-}
-
-// ===== Dynamic Urgency Spots =====
-function updateUrgency() {
-    const today = new Date();
-    const dayOfWeek = today.getDay();
-    const spotsLeft = Math.max(1, 5 - dayOfWeek);
-    const spotsEl = document.getElementById('urgencySpots');
-    if (spotsEl) spotsEl.textContent = spotsLeft;
-}
-updateUrgency();
+// ===== Dynamic Info Banner (no fake urgency) =====
+// Banner is now static informational — no JS needed
 
 // ===== Scroll Progress Indicator =====
 (function createScrollProgress() {
@@ -211,7 +197,7 @@ updateUrgency();
     });
 })();
 
-// ===== Auto-hide urgency banner on scroll =====
+// ===== Auto-hide info banner on scroll =====
 const urgencyBanner = document.querySelector('.urgency-banner');
 let lastScroll = 0;
 
@@ -403,14 +389,5 @@ if (video) {
     });
 })();
 
-// ===== Dynamic Form Quote Count =====
-(function updateQuoteCount() {
-    const el = document.getElementById('quoteCountToday');
-    if (!el) return;
-    const hour = new Date().getHours();
-    const count = Math.max(3, Math.min(12, Math.floor(hour * 0.5) + 3));
-    el.textContent = count;
-})();
-
 console.log('%cJA Pressure Washing', 'color: #0066cc; font-size: 24px; font-weight: bold;');
-console.log('%cProfessional Pressure Washing Services', 'color: #666; font-size: 14px;');
+console.log('%cProfessional Pressure Washing Services — Sydney', 'color: #666; font-size: 14px;');
